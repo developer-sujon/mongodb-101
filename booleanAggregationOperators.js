@@ -1,4 +1,5 @@
-//Boolean Aggregation Operators
+/*
+Boolean Aggregation Operators
 
 $and Operator
 Returns true only when all its expressions evaluate to true. • Accepts any number of argument expressions.
@@ -19,3 +20,5 @@ db.products.aggregate([{
         }
     }
 }])
+
+*/

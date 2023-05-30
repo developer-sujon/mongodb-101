@@ -8,7 +8,4 @@ db.posts.aggregate([
       as: "tags",
     },
   },
-  {
-    $project: { name: 1 },
-  },
 ]);

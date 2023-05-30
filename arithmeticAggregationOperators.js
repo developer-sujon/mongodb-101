@@ -1,4 +1,5 @@
-//Arithmetic Aggregation Operators
+/*
+Arithmetic Aggregation Operators
 
 $abs
 Returns the absolute value of a number.
@@ -43,13 +44,13 @@ $subtract
 Returns the result of subtracting the second value from the first. If the two values are numbers, return the difference. If the two values are dates, return the difference in milliseconds.
 
 $trunc Truncates a number to its integer.
-
+*/
 
 db.products.aggregate([
-    {
-      $match: { remark: "NEW" },
-    },
-    {
-      $addFields: { "newPrice": {$add: [1,3]} },
-    },
-  ]);
+  {
+    $match: { remark: "NEW" },
+  },
+  {
+    $addFields: { newPrice: { $add: [1, 3] } },
+  },
+]);

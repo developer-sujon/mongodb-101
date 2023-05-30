@@ -1,4 +1,4 @@
-//String Aggregation Operators
+/*String Aggregation Operators
 
 $concat
 Concatenates any number of strings.
@@ -17,10 +17,10 @@ Returns the substring of a string
 
 $indexOffBytes
 Searches a string for an occurrence of a substring and returns the UTF-8 byte index of the first
-occurence
+occurrence
 
 $indexOfCP
-Searches a string for an occurrence of a substring and returns the UTF-8 code point index of the first occurence.
+Searches a string for an occurrence of a substring and returns the UTF-8 code point index of the first occurrence.
 
 $strcasecmp
 Performs case-Insensitive string comparison and returns: 0 if two strings are equivalent
@@ -34,11 +34,13 @@ Returns the number of UTF-8 code points in a string.
 $substrCP
 Returns the substring of a string. Starts with the character at the specified LITF-8 code point (CP).
 
+*/
+
 db.products.aggregate([
-    {
-      $match: { remark: "NEW" },
-    },
-    {
-      $addFields: { "newPrice": {$concat: ['$category', ' ' ,'$subcategory']} },
-    },
-  ]);
+  {
+    $match: { remark: "NEW" },
+  },
+  {
+    $addFields: { newPrice: { $concat: ["$category", " ", "$subcategory"] } },
+  },
+]);

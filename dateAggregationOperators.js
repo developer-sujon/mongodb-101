@@ -1,4 +1,4 @@
-// Date Aggregation Operators
+/*Date Aggregation Operators
 
 $dayOfYear
 Returns the day of the year for a date as a number between 1 and 366 (leap year).
@@ -28,11 +28,13 @@ $millisecond Returns the milliseconds of a date as a number between 0 and 999.
 
 $dateToString Returns the date as a formatted string.
 
+*/
+
 db.products.aggregate([
-    {
-      $match: { remark: "NEW" },
-    },
-    {
-      $addFields: { "newPrice": {$dayOfYear: "$createdDate"} },
-    },
-  ]);
+  {
+    $match: { remark: "NEW" },
+  },
+  {
+    $addFields: { newPrice: { $dayOfYear: "$createdDate" } },
+  },
+]);
